@@ -17,4 +17,4 @@ public class Column<T> {
     public Cell getCell(int i){
         return cells.get(i);
     }
-}
+}   
