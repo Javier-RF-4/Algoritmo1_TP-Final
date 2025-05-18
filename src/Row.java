@@ -1,16 +1,15 @@
 import java.util.List;
 
 public class Row {
-    private Object label;
-    private List<Cell> cells;
+    private int rowIndex;
+    private List<Column> columns; // Referencia a las columnas originales
 
-    public Row(Object label, List<Cell> cells){
-        this.label = label;
-        this.cells =cells;
+    public Row(int rowIndex, List<Column> columns) {
+        this.rowIndex = rowIndex;
+        this.columns = columns;
     }
 
-    public Row(List<Cell> cells){
-        this.cells =cells;
-        //Agregar un método para crear labels de las filas
+    public Cell getCell(int columnIndex) {
+        return columns.get(columnIndex).getCell(rowIndex);
     }
 }
