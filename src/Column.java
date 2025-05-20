@@ -13,7 +13,7 @@ public class Column<T> {
     public Object getLabel() {
         return label;
     }
-
+    /asd
     public void addCell(Cell cell){
         cells.add(cell);
     }
