@@ -1,15 +1,31 @@
 import java.util.List;
 
 public class Row {
-    private int rowIndex;
-    private List<Column> columns; // Referencia a las columnas originales
+    private Object label;
+    private List<Cell> cells;
 
-    public Row(int rowIndex, List<Column> columns) {
-        this.rowIndex = rowIndex;
-        this.columns = columns;
+    public Row(Object label, List<Cell> cells){
+        this.label = label;
+        this.cells =cells;
     }
 
-    public Cell getCell(int columnIndex) {
-        return columns.get(columnIndex).getCell(rowIndex);
+    public Object getLabel() {
+        return label;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Label: ").append(label != null ? label.toString() : "null").append(" | Cells: [");
+        for (int i = 0; i < cells.size(); i++) {
+            sb.append(cells.get(i));
+            if (i < cells.size() - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+
+        return sb.toString();
     }
 }

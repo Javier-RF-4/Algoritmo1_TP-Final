@@ -1,24 +1,24 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Column {
+public class Column<T> {
     private Object label;
     private List<Cell> cells;
 
-    public Column(Object label) {
+    public Column(Object label){
         this.label = label;
         this.cells = new ArrayList<>();
     }
 
-    public void addCell(Cell cell) {
+    public Object getLabel() {
+        return label;
+    }
+
+    public void addCell(Cell cell){
         cells.add(cell);
     }
 
-    public Cell getCell(int index) {
-        return cells.get(index);
-    }
-
-    public int size() {
-        return cells.size();
+    public Cell getCell(int i){
+        return cells.get(i);
     }
 }

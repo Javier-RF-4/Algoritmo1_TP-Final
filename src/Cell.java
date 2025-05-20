@@ -1,15 +1,12 @@
 public class Cell {
-    private Object content;
+    public Object content;
 
-    // Metodo constructor
     public Cell(Object content){
         this.content = content;
     }
 
-    //Metodo Getter
-    public Object getContent(){
-        return content;
+    @Override
+    public String toString() {
+        return content != null ? content.toString() : "null";
     }
-
-
 }
